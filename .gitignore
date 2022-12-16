@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Project Secret
+.env
+
+# Dataset
+yumi_dataset/
+
+# Model
+saved_model/
+model.tflite
