@@ -84,7 +84,7 @@ async def on_message(message):
         return
     
     if message.content == KEYWORD:
-        if (message.attachments[0].url is not None) and (is_url_image(message.attachments[0].url)):
+        if (len(message.attachments) != 0) and (is_url_image(message.attachments[0].url)):
             output_class, confidence = predict_image(model, str(message.attachments[0].url))
             response = 'Image prediction: ' + str(output_class) + '\n' + 'Confidence: ' + str(confidence)
             await message.channel.send(response, reference=message)
