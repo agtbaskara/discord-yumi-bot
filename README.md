@@ -1,8 +1,10 @@
 # discord-yumi-bot
 
+This discord bot will detect if the pictures in a message from yumi or not
+
 ## How to run
 
-- Make sure you already have `model.tflite` file, if not see the `How to train model` section
+- Make sure you already have `model.tflite` file, if not see `How to train model` section
 
 - Install Tensorflow (https://www.tensorflow.org/install/)
 
@@ -30,12 +32,12 @@ python main.py
 
 ## How to run in Raspberry Pi
 
-- Make sure you already have `model.tflite` file, if not see the `How to train model` section
+- Make sure you already have `model.tflite` file, if not see `How to train model` section
 
 - Install Tensorflow Lite Runtime (https://www.tensorflow.org/lite/guide/python)
 
 ```bash
-python3 -m pip install tflite-runtime
+pip install tflite-runtime
 ```
 
 - Install `dotenv` and `discord.py` library
