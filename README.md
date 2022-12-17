@@ -66,16 +66,10 @@ python main_tflite.py
 
 **Model training can only be done on PC!**
 
-- Download and extract dataset into `yumi_dataset` folder (https://onedrive.live.com/download?cid=E5A63D34BCCB21B3&resid=E5A63D34BCCB21B3%2126891&authkey=AGj-KR9VqDLd23s)
+- Download and extract dataset into `yumi_dataset` folder (https://onedrive.live.com/download?cid=E5A63D34BCCB21B3&resid=E5A63D34BCCB21B3%2126946&authkey=ANaX1kJfAfhh7T8)
 
 - Run `train_model.py` script
 
 ```bash
 python train_model.py
-```
-
-- Run `convert_to_tflite.py` script to get `model.tflite` file
-
-```bash
-python convert_to_tflite.py
 ```

@@ -37,9 +37,12 @@ validation_dataset = validation_dataset.prefetch(buffer_size=AUTOTUNE)
 # Set Augmentation
 data_augmentation = tf.keras.Sequential([
     tf.keras.layers.RandomFlip('horizontal_and_vertical'),
-    tf.keras.layers.RandomRotation(factor=0.5),
-    tf.keras.layers.RandomBrightness(factor=0.1),
-    tf.keras.layers.RandomContrast(factor=0.1)
+    tf.keras.layers.RandomRotation(0.2),
+    tf.keras.layers.RandomBrightness(0.2),
+    tf.keras.layers.RandomContrast(0.2),
+    tf.keras.layers.RandomZoom(0.2),
+    tf.keras.layers.RandomHeight(0.2),
+    tf.keras.layers.RandomWidth(0.2)
 ])
 
 # Create Model
@@ -110,3 +113,11 @@ history_fine = model.fit(train_dataset,
 
 # Save Model in SavedModel format
 model.save('saved_model')
+
+# Convert the model
+converter = tf.lite.TFLiteConverter.from_saved_model('saved_model')
+tflite_model = converter.convert()
+
+# Save the model.
+with open('model.tflite', 'wb') as f:
+    f.write(tflite_model)
