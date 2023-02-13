@@ -86,7 +86,7 @@ async def on_message(message):
     if message.content == KEYWORD:
         if (len(message.attachments) != 0) and (is_url_image(message.attachments[0].url)):
             output_class, confidence = predict_image(model, str(message.attachments[0].url))
-            response = 'Image prediction: ' + str(output_class) + '\n' + 'Confidence: ' + str(confidence)
+            response = 'Yumi the best' + '\n' + 'Image prediction: ' + str(output_class) + '\n' + 'Confidence: ' + str(confidence)
             await message.channel.send(response, reference=message)
 
 if __name__ == '__main__':
